@@ -3,6 +3,7 @@
  * Find N-closest quakes
  * 
  * @author Duke Software/Learn to Program
+ * @author Ben Sweeney/dasje
  * @version 1.0, November 2015
  */
 
