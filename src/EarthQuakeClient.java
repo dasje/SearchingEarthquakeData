@@ -123,11 +123,11 @@ public class EarthQuakeClient {
 
     public static void quakesOfDepth() {
         EarthQuakeParser parser = new EarthQuakeParser();
-        String source = "data/nov20quakedatasmall.atom";
+        String source = "data/nov20quakedata.atom";
         ArrayList<QuakeEntry> list = parser.read(source);
         System.out.println("read data for " + list.size() + " quakes");
 
-        ArrayList<QuakeEntry> toDepth = filterByDepth(list, -10000.0, -5000.0);
+        ArrayList<QuakeEntry> toDepth = filterByDepth(list,  -4000.0, -2000.0);
         for (QuakeEntry qe: toDepth) {
             System.out.println(qe);
         }
@@ -136,14 +136,17 @@ public class EarthQuakeClient {
 
     public static void quakesByPhrase() {
         EarthQuakeParser parser = new EarthQuakeParser();
-        String source = "data/nov20quakedatasmall.atom";
+        String source = "data/nov20quakedata.atom";
         ArrayList<QuakeEntry> list = parser.read(source);
         System.out.println("read data for " + list.size() + " quakes");
 
         HashMap<String, String> hm = new HashMap<>();
-        hm.put("California", "end");
+        //hm.put("California", "end");
+        //hm.put("Can", "any");
+        //hm.put("Explosion", "start");
+        //hm.put("Quarry Blast", "start");
+        //hm.put("Alaska", "end");
         hm.put("Can", "any");
-        hm.put("Explosion", "start");
 
         for (String key: hm.keySet()) {
             ArrayList<QuakeEntry> withPhrase = filterByPhrase(list, hm.get(key), key);

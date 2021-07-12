@@ -31,4 +31,9 @@ class LargestQuakesTest {
         System.out.println(list.size() + " quakes processed");
         System.out.println(i.size() + " top quakes");
     }
+
+    @Test
+    void findLargestQuakesTest() {
+        LargestQuakes.findLargestQuakes();
+    }
 }
