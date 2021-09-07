@@ -23,12 +23,7 @@ class QuakeSortInPlaceTest {
         }*/
 
         System.out.println("read data for "+list.size()+" quakes");
-        int x = QuakeSortInPlace.getLargestDepth(list, 0);
-        System.out.println(x);
-        System.out.println(list.get(x));
-        System.out.println();
-        int y = QuakeSortInPlace.getLargestDepth(list, 11);
-        System.out.println(y);
-        System.out.println(list.get(y));
+        int x = QuakeSortInPlace.getLargestDepth(list, 50);
+
     }
 }

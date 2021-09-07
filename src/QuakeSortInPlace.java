@@ -46,9 +46,9 @@ public class QuakeSortInPlace {
             int minIdx = getSmallestMagnitude(in,i);
             QuakeEntry qi = in.get(i);
             QuakeEntry qmin = in.get(minIdx);
-            if (! qi.equals(qmin)) {
+            //if (! qi.equals(qmin)) {
                 passCount += 1;
-            }
+            //}
             in.set(i,qmin);
             in.set(minIdx,qi);
             if (checkInSortedOrder(in)) {
@@ -96,7 +96,7 @@ public class QuakeSortInPlace {
 
     public static void sortByLargestDepth(ArrayList<QuakeEntry> in) {
         /*Sorts the give ArrayList by the depths of the quakes, with largest first*/
-        for (int i = 0; i < in.size(); i++) {
+        for (int i = 0; i < 50 /*in.size()*/; i++) {
             int largest = getLargestDepth(in, i);
             QuakeEntry current = in.get(i);
             QuakeEntry currentLargest = in.get(largest);
@@ -131,15 +131,18 @@ public class QuakeSortInPlace {
         //String source = "data/nov20quakedatasmall.atom";
         //String source = "data/nov20quakedata.atom";
         //String source = "data/earthquakeDataSampleSix1.atom";
-        String source = "data/earthquakeDataSampleSix2.atom";
+        //String source = "data/earthquakeDataSampleSix2.atom";
+        //String source = "data/earthQuakeDataDec6sample2.atom";
+        //String source = "data/earthQuakeDataWeekDec6sample1.atom";
+        String source = "data/earthQuakeDataWeekDec6sample2.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);
-        for (QuakeEntry qe: list) {
+        /*for (QuakeEntry qe: list) {
             System.out.println(qe);
-        }
+        }*/
        
         System.out.println("read data for "+list.size()+" quakes");
-        sortByMagnitudeWithCheck(list);
-        //sortByMagnitudeWithBubbleSortWithCheck(list);
+        //sortByMagnitudeWithCheck(list);
+        sortByMagnitudeWithBubbleSortWithCheck(list);
         //sortByMagnitudeWithBubbleSort(list);
         //sortByLargestDepth(list);
         //sortByMagnitude(list);
